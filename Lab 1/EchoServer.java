@@ -19,7 +19,10 @@ public class EchoServer {
                 new PrintWriter(clientSocket.getOutputStream(), true);                   
             BufferedReader in = new BufferedReader(
                 new InputStreamReader(clientSocket.getInputStream()));
-        
+            
+            System.out.println("Client IP: " + clientSocket.getInetAddress().getHostAddress()); //Printing Client IP
+            System.out.println("Client Port: " + clientSocket.getPort()); //Printing Client Port
+
             String inputLine;
             while ((inputLine = in.readLine()) != null) {
                 out.println(inputLine);
